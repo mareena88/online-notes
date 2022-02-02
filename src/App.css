@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+.edit-btn {
+ margin-right: 0.5rem;
+ margin-top: 0.75rem;
+ display: flex;
+ align-items: center;
+ white-space: nowrap;
+}
+
+nav .brand-logo {
+ position: relative;
+}
+
+col s12 m6 {
+ width: 100%;
+}
+
+.note {
+ display: flex;
+}
+
+.card .card-content {
+ text-align: left;
+}
+
+.material-icons {
+ margin-left: 0.2rem;
+}
+
+.large-logo {
+ font-size: 3rem !important;
+ margin-right: 0.2rem !important;
+ margin-top: 0.2rem !important;
+}
