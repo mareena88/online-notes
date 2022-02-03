@@ -14,23 +14,27 @@ const EditNote = ({editForm, note}) => {
 
  /* function to update note in firestore */
 
- const handleUpdate = async (e) => {
-  // e.preventDefault()
-  // const noteDocRef = doc(db, 'notes', note.id)
-  // try{
-  //   await updateDoc(noteDocRef, {
-  //     title: newtitle,
-  //     content: newcontent
-  //   })
-  //   editForm(false);
-  // } catch (err) {
-  //   alert(err)
-  // }
-  db.collection('notes').doc(doc.id).updateDoc({
-   title: newtitle,
-   content: newcontent
-  });
-}
+//  const handleUpdate = async (e) => {
+//   // e.preventDefault()
+//   // const noteDocRef = doc(db, 'notes', note.id)
+//   // try{
+//   //   await updateDoc(noteDocRef, {
+//   //     title: newtitle,
+//   //     content: newcontent
+//   //   })
+//   //   editForm(false);
+//   // } catch (err) {
+//   //   alert(err)
+//   // }
+//   db.collection('notes').doc(doc.id).updateDoc({
+//    title: newtitle,
+//    content: newcontent
+//   });
+// }
+
+const handleUpdate = async (note, title, content) => {
+ await updateDoc(doc(db, "notes", note.id), { title: newtitle, content: newcontent });
+};
 
 
  const pageModel = (

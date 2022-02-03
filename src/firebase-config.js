@@ -3,12 +3,12 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from '@firebase/firestore';
 
 const firebaseConfig = {
- apiKey: "AIzaSyCrW2JLlCg_VdYB2gAWW5z_zqX-N-2mR-M",
- authDomain: "onlinenotes-dev.firebaseapp.com",
- projectId: "onlinenotes-dev",
- storageBucket: "onlinenotes-dev.appspot.com",
- messagingSenderId: "79652839174",
- appId: "1:79652839174:web:e5b87070efac9ab01ec887"
+ apiKey: "AIzaSyBBhO5pQPkFTHSyfC1XKEgsz4fqUlMpf8A",
+ authDomain: "online-notes-app-f7787.firebaseapp.com",
+ projectId: "online-notes-app-f7787",
+ storageBucket: "online-notes-app-f7787.appspot.com",
+ messagingSenderId: "820266170911",
+ appId: "1:820266170911:web:05bef7fc1377c32a22732a"
 };
 
 // Initialize Firebase
