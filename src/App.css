@@ -47,10 +47,11 @@
 
 nav .brand-logo {
  position: relative;
+ left: 0;
 }
 
 col s12 m6 {
- width: 100%;
+ width: 60%;
 }
 
 .note {
@@ -69,4 +70,32 @@ col s12 m6 {
  font-size: 3rem !important;
  margin-right: 0.2rem !important;
  margin-top: 0.2rem !important;
+}
+
+.container {
+ margin-top: 3rem;
+}
+
+.welcome {
+ margin-top: 8rem;
+}
+
+.waves-effect {
+ width:12rem;
+}
+
+.edit-form {
+ background: lightgray;
+ padding: 15px;
+ position: absolute;
+ top: 6rem;
+}
+
+form.white {
+ padding: 20px;
+}
+
+.main-title {
+ text-align: left;
+ margin-left: 20px;
 }

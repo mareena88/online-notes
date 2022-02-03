@@ -28,7 +28,7 @@ const SignUp = () => {
   try {
    const user = await createUserWithEmailAndPassword(auth, captureEmail, capturePassword);
    console.log(user);
-   navigate("/");
+   navigate("/signin");
   } catch(error) {
    console.log(error.message);
   }

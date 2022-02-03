@@ -18,7 +18,7 @@ function App() {
   setUser(currentUser);
  })
 
- const [isAuth, setIsAuth] = useState(false);
+ const [isAuth, setIsAuth] = useState(localStorage.getItem("is Auth"));
 
  const logout = async () => {
   await signOut(auth);
@@ -30,7 +30,6 @@ function App() {
   return (
    <BrowserRouter>
     <div className="App">
-
     <nav className='nav-wrapper grey darken-3'>
      <div className="container">
       <Link to='/' className='brand-logo'>

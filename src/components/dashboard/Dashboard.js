@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { db } from '../../firebase-config';
 import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import '../../App.css';
+import EditNote from '../notes/EditNote';
+import Footer from './Footer';
 
 const Dashboard = () => {
 
@@ -9,6 +11,7 @@ const Dashboard = () => {
 
  const [notes, setNotes] = useState([]);
  const notesCollectionRef = collection(db, "notes");
+ const copyNote = [...notes];
 
  useEffect(() => {
   const getNotes = async () => {
@@ -17,7 +20,17 @@ const Dashboard = () => {
   };
 
   getNotes()
- }, [notes])
+ })
+
+ // const copyNote = [...notes];
+ // console.log(copyNote);
+
+ // edit a note 
+
+ const [editForm, setEditForm] = useState(false);
+
+ /* function to update document in firestore */
+
 
  // delete a note from the db
 
@@ -28,7 +41,7 @@ const Dashboard = () => {
 
  const pageModel = (
    <div className='dashboard container'>
-    <h2>My Notes</h2>
+    <h2 className='main-title'>My Notes</h2>
     <div className='row note'>
         <div className="col s12 m12">
          <div className="card blue-grey darken-1">
@@ -70,8 +83,8 @@ const Dashboard = () => {
        </div>
 
        {/* note from db  */}
-    {notes.map((note) => {
-      return <div className='row note'>
+    {notes.map((note, index) => {
+      return <div key={index} className='row note'>
         <div className="col s12 m12">
          <div className="card blue-grey darken-1">
           <div className="card-content white-text">
@@ -80,10 +93,11 @@ const Dashboard = () => {
           </div>
          </div>
         </div>
-        <button className='btn lighten-1 z-depth-0 edit-btn'>
-         Edit note
+        <button onClick={() => {setEditForm(true)}} className='btn lighten-1 z-depth-0 edit-btn'>
+          Edit note
          <i className="material-icons">edit</i>
         </button>
+        {editForm === true && <EditNote setEditForm={setEditForm} note={note} notes={notes}/>}
         
         <button onClick={() => {deleteNote(note.id)}} className='btn pink lighten-1 z-depth-0 edit-btn'>
          Delete note
@@ -91,6 +105,7 @@ const Dashboard = () => {
         </button>
        </div>
      })}
+     <Footer/>
    </div>
  )
  return pageModel;
